@@ -6,12 +6,11 @@ public class MyFrame {
 		var scanner = new Scanner(System.in);
 		var frameLength = scanner.nextInt();
 		var frameWidth = scanner.nextInt();
-		var temp = scanner.nextLine();///// Съедает \n после nextInt();
-		// scanner.skip("\n"); В IntelliJ IDEA работает, в STS - нет;
+		scanner.skip("[\r\n]+");
 		var str = scanner.nextLine();
 
 		if (str.length() > frameWidth - 2 || str.isEmpty() || frameLength < 3) {
-			System.out.println("Ошибка");
+			System.out.println("РћС€РёР±РєР°");
 
 		} else {
 			var centerWidth = (frameWidth - str.length()) / 2;
