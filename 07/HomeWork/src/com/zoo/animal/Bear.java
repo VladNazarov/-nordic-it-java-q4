@@ -9,8 +9,8 @@ public class Bear extends Animal {
 		System.out.println("I`m afraid of bees");
 	}
 
-	public void hunt() {
-		System.out.println("I`m hunting for fish");
+	public void fishing() {
+		System.out.println("I`m fishing");
 	}
 
 }

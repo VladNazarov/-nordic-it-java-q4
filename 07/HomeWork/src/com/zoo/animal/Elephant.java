@@ -9,8 +9,8 @@ public class Elephant extends Animal {
 		System.out.println("I`m afraid of mice");
 	}
 
-	public void hunt() {
-		System.out.println("I`m hunting for fruits");
+	public void shower() {
+		System.out.println("I`m taking shower");
 	}
 
 }

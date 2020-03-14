@@ -27,8 +27,4 @@ public class Animal {
 		System.out.println("I`m afraid...");
 	}
 
-	public void hunt() {
-		System.out.println("I`m hunting...");
-	}
-
 }

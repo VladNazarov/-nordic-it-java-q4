@@ -9,8 +9,8 @@ public class Dog extends Animal {
 		System.out.println("I`m afraid of cars");
 	}
 
-	public void hunt() {
-		System.out.println("I`m hunting for cats");
+	public void guard() {
+		System.out.println("I`m guarding the house");
 	}
 
 }
