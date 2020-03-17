@@ -1,6 +1,17 @@
 package com.zoo.animal;
 
 public class Cat extends Animal {
+
+	public Cat() {
+		super();
+
+	}
+
+	public Cat(String name, int age) {
+		super(name, age);
+
+	}
+
 	public void say() {
 		System.out.println("Meow");
 	}

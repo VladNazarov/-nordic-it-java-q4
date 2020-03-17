@@ -1,6 +1,17 @@
 package com.zoo.animal;
 
 public class Elephant extends Animal {
+
+	public Elephant() {
+		super();
+
+	}
+
+	public Elephant(String name, int age) {
+		super(name, age);
+
+	}
+
 	public void say() {
 		System.out.println("truuuuu");
 	}
