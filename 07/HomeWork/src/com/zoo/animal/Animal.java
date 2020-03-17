@@ -1,6 +1,6 @@
 package com.zoo.animal;
 
-public class Animal {
+public abstract class Animal implements Sleepable {
 	private String name;
 	private int age;
 
@@ -29,9 +29,9 @@ public class Animal {
 		this.age = age;
 	}
 
-	public void say() {
-		System.out.println("I`m animal");
-	}
+	public abstract void say();
+
+	public abstract void afraid();
 
 	public void sleep() {
 		System.out.println("ZZZzzzzz.....");
@@ -39,10 +39,6 @@ public class Animal {
 
 	public void eat() {
 		System.out.println("I`m eating...");
-	}
-
-	public void afraid() {
-		System.out.println("I`m afraid...");
 	}
 
 }
