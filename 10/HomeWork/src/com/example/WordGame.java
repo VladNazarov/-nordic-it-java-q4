@@ -4,15 +4,14 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class WordGame {
+	private static HashSet<Character> letters = new HashSet<Character>();
+	private static HashSet<String> wordsHistory = new HashSet<String>();
 
 	public static void main(String[] args) {
 		var scanner = new Scanner(System.in);
 
 		System.out.println("Введите слово: ");
 		var word = scanner.nextLine();
-
-		var letters = new HashSet<Character>();
-		var wordsHistory = new HashSet<String>();
 
 		for (int i = 0; i < word.length(); i++) {
 			letters.add(word.charAt(i));
@@ -22,29 +21,22 @@ public class WordGame {
 		var isEndSecond = false;
 
 		do {
+			isEndFirst = false;
+			isEndSecond = false;
+
 			System.out.println("Ход первого игрока: ");
 			var stepFirst = scanner.nextLine();
 
 			if (stepFirst.isEmpty()) {
 				isEndFirst = true;
 			} else {
-				var isTrueLetters = true;
-
-				for (int i = 0; i < stepFirst.length(); i++) {
-
-					if (!letters.contains(stepFirst.charAt(i))) {
-						System.out.println("Таких букв нет в слове!");
-						isTrueLetters = false;
-						break;
-					}
-				}
-
-				if (wordsHistory.contains(stepFirst)) {
-					System.out.println("Такое слово уже было");
-
-				} else if (!wordsHistory.contains(stepFirst) && isTrueLetters) {
+				if (!wordsHistory.contains(stepFirst) && checkWord(stepFirst)) {
 					wordsHistory.add(stepFirst);
+
+				} else if (wordsHistory.contains(stepFirst)) {
+					System.out.println("Такое слово уже было");
 				}
+
 			}
 
 			System.out.println("Ход второго игрока: ");
@@ -53,25 +45,15 @@ public class WordGame {
 			if (stepSecond.isEmpty()) {
 				isEndSecond = true;
 			} else {
-				var isTrueLetters = true;
-
-				for (int i = 0; i < stepSecond.length(); i++) {
-					if (!letters.contains(stepSecond.charAt(i))) {
-						System.out.println("Таких букв нет в слове!");
-						isTrueLetters = false;
-						break;
-					}
-				}
-
-				if (wordsHistory.contains(stepSecond)) {
-					System.out.println("Такое слово уже было");
-
-				} else if (!wordsHistory.contains(stepFirst) && isTrueLetters) {
+				if (!wordsHistory.contains(stepSecond) && checkWord(stepSecond)) {
 					wordsHistory.add(stepSecond);
+
+				} else if (wordsHistory.contains(stepSecond)) {
+					System.out.println("Такое слово уже было");
 				}
 			}
 
-		} while (!isEndFirst && !isEndSecond);
+		} while (!isEndFirst || !isEndSecond);
 
 		System.out.println("Игра окончена!");
 
@@ -81,4 +63,16 @@ public class WordGame {
 
 	}
 
+	private static boolean checkWord(String word) {
+		var result = true;
+
+		for (int i = 0; i < word.length(); i++) {
+			if (!letters.contains(word.charAt(i))) {
+				System.out.println("Таких букв нет в слове!");
+				result = false;
+				break;
+			}
+		}
+		return result;
+	}
 }
