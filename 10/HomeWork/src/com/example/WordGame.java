@@ -28,18 +28,21 @@ public class WordGame {
 			if (stepFirst.isEmpty()) {
 				isEndFirst = true;
 			} else {
+				var isTrueLetters = true;
 
 				for (int i = 0; i < stepFirst.length(); i++) {
 
 					if (!letters.contains(stepFirst.charAt(i))) {
 						System.out.println("Таких букв нет в слове!");
+						isTrueLetters = false;
+						break;
 					}
 				}
 
 				if (wordsHistory.contains(stepFirst)) {
 					System.out.println("Такое слово уже было");
 
-				} else {
+				} else if (!wordsHistory.contains(stepFirst) && isTrueLetters) {
 					wordsHistory.add(stepFirst);
 				}
 			}
@@ -50,18 +53,20 @@ public class WordGame {
 			if (stepSecond.isEmpty()) {
 				isEndSecond = true;
 			} else {
+				var isTrueLetters = true;
 
 				for (int i = 0; i < stepSecond.length(); i++) {
 					if (!letters.contains(stepSecond.charAt(i))) {
 						System.out.println("Таких букв нет в слове!");
-
+						isTrueLetters = false;
+						break;
 					}
 				}
 
 				if (wordsHistory.contains(stepSecond)) {
 					System.out.println("Такое слово уже было");
 
-				} else {
+				} else if (!wordsHistory.contains(stepFirst) && isTrueLetters) {
 					wordsHistory.add(stepSecond);
 				}
 			}
