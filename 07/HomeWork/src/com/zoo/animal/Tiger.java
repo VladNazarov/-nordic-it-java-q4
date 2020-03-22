@@ -4,12 +4,10 @@ public class Tiger extends Animal {
 
 	public Tiger() {
 		super();
-
 	}
 
 	public Tiger(String name, int age) {
 		super(name, age);
-
 	}
 
 	public void say() {

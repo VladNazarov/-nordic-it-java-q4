@@ -1,6 +1,13 @@
 package com.zoo.animal;
 
-public abstract class Animal implements Sleepable {
+import com.zoo.action.AbleToEat;
+import com.zoo.action.Afraidable;
+import com.zoo.action.Sayable;
+import com.zoo.action.Sleepable;
+import com.zoo.exception.NegativeValueException;
+import com.zoo.exception.TooManyHoursException;
+
+public abstract class Animal implements Sleepable, AbleToEat, Sayable, Afraidable {
 	private String name;
 	private int age;
 
@@ -35,6 +42,15 @@ public abstract class Animal implements Sleepable {
 
 	public void sleep() {
 		System.out.println("ZZZzzzzz.....");
+	}
+
+	public void sleep(byte hours) throws NegativeValueException, TooManyHoursException {
+		if (hours < 0) {
+			throw new NegativeValueException("Hours can`t be negative");
+		} else if (hours > 12) {
+			throw new TooManyHoursException("Too many hours");
+		}
+		System.out.println("ZZZZZzzzzz..." + hours + " hours");
 	}
 
 	public void eat() {
