@@ -22,12 +22,14 @@ public class Zoo {
 
 		try {
 			duck.fly(5);
+
 		} catch (NegativeValueException e) {
 			System.out.println(e.getMessage());
 		}
 
 		try {
 			cat.play((byte) 2);
+
 		} catch (TooManyHoursException e) {
 			System.out.println(e.getMessage());
 		}

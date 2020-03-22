@@ -47,9 +47,11 @@ public abstract class Animal implements Sleepable, AbleToEat, Sayable, Afraidabl
 	public void sleep(byte hours) throws NegativeValueException, TooManyHoursException {
 		if (hours < 0) {
 			throw new NegativeValueException("Hours can`t be negative");
+
 		} else if (hours > 12) {
 			throw new TooManyHoursException("Too many hours");
 		}
+
 		System.out.println("ZZZZZzzzzz..." + hours + " hours");
 	}
 

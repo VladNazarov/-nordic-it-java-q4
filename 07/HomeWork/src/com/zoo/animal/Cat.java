@@ -24,6 +24,7 @@ public class Cat extends Animal {
 		if (hours > 3) {
 			throw new TooManyHoursException("Too many hours");
 		}
+
 		System.out.println("I`m playing with ball for " + hours + " hours");
 	}
 

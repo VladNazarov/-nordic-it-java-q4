@@ -26,6 +26,7 @@ public class Duck extends Animal {
 		if (meters < 0) {
 			throw new NegativeValueException("Can`t be negative meters");
 		}
+
 		System.out.println("I flew " + meters + " meters");
 	}
 
