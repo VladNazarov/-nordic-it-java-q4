@@ -2,14 +2,14 @@ package com.example;
 
 import java.util.Iterator;
 
-public class MyNumber implements Iterable<Integer> {
+public class MyInteger implements Iterable<Integer> {
 	private Integer data;
 
-	public MyNumber() {
+	public MyInteger() {
 
 	}
 
-	public MyNumber(Integer data) {
+	public MyInteger(Integer data) {
 		this.data = data;
 	}
 
