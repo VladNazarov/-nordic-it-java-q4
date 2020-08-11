@@ -6,8 +6,7 @@ public class MyFrame {
 		var scanner = new Scanner(System.in);
 		var frameLength = scanner.nextInt();
 		var frameWidth = scanner.nextInt();
-		scanner.skip("[\r\n]+");
-		var str = scanner.nextLine();
+		var str = scanner.next();
 
 		if (str.length() > frameWidth - 2 || str.isEmpty() || frameLength < 3) {
 			System.out.println("Ошибка");
